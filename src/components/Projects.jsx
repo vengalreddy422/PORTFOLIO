@@ -41,7 +41,7 @@ export default function Projects() {
               <div className="flex items-center gap-3 mt-auto pt-4 border-t border-white/5">
                 <button 
                   onClick={(e) => { e.stopPropagation(); setSelectedProject(p) }}
-                  className="flex-1 bg-ink-950 hover:bg-ink-900 text-mist-100 border border-white/10 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 rounded-lg py-2 text-sm font-medium"
+                  className="hr-btn-glass flex-1"
                 >
                   View More
                 </button>
@@ -50,7 +50,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="flex items-center justify-center gap-2 bg-mist-100 hover:bg-white text-ink-900 hover:-translate-y-0.5 active:scale-95 transition-all duration-300 rounded-lg py-2 px-4 text-sm font-medium"
+                  className="hr-btn-glass"
                 >
                   <Github size={16} /> GitHub
                 </a>
@@ -64,9 +64,11 @@ export default function Projects() {
         <div className="mt-12 flex justify-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-3 rounded-xl bg-ink-800 hover:bg-ink-700 text-mist-100 border border-white/10 hover:border-py-blue/30 transition-all duration-300 font-medium text-sm shadow-card hover:-translate-y-1 active:scale-95"
+            className="hr-btn-secondary"
           >
-            {showAll ? 'View Less' : 'View More Projects'}
+            <span className="hr-btn-secondary-inner">
+              {showAll ? 'View Less' : 'View More Projects'}
+            </span>
           </button>
         </div>
       )}
@@ -139,22 +141,26 @@ export default function Projects() {
                   {/* Links */}
                   <div>
                     <h4 className="text-lg font-medium text-mist-100 mb-3 border-b border-white/5 pb-2">Project Links</h4>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-4 mt-4">
                       <a
                         href={selectedProject.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-ink-800 hover:bg-ink-700 transition-colors text-mist-100 border border-white/10 text-sm font-medium"
+                        className="hr-btn-secondary"
                       >
-                        <Github size={16} /> GitHub
+                        <span className="hr-btn-secondary-inner">
+                          <Github size={16} /> GitHub
+                        </span>
                       </a>
                       <a
                         href={selectedProject.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-py-blue hover:bg-py-lightblue transition-colors text-white text-sm font-medium shadow-glow"
+                        className="hr-btn-primary"
                       >
-                        Live Portal <ExternalLink size={16} />
+                        <span className="hr-btn-primary-inner">
+                          Live Portal <ExternalLink size={16} />
+                        </span>
                       </a>
                     </div>
                   </div>

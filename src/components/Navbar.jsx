@@ -19,11 +19,11 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#home" className="font-display font-semibold tracking-tight text-mist-100">
+        <a href="#home" className="font-display font-semibold text-xl tracking-tight text-mist-100">
           Vengal<span className="text-py-yellow">.</span>dev
         </a>
 
-        <ul className="hidden md:flex items-center gap-8 font-body text-sm text-mist-300">
+        <ul className="hidden md:flex items-center gap-8 font-body text-base text-mist-300">
           {nav.map((item) => (
             <li key={item.id}>
               <a href={`#${item.id}`} className="hover:text-py-yellow transition-colors">
@@ -43,7 +43,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <ul className="md:hidden bg-ink-900/95 border-t border-white/5 px-6 py-4 flex flex-col gap-4 font-body text-sm text-mist-300">
+        <ul className="md:hidden bg-ink-900/95 border-t border-white/5 px-6 py-4 flex flex-col gap-4 font-body text-base text-mist-300">
           {nav.map((item) => (
             <li key={item.id}>
               <a href={`#${item.id}`} onClick={() => setOpen(false)} className="block py-1">

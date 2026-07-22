@@ -24,7 +24,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Sora"', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'sans-serif'],
         body: ['"Inter"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
         serif: ['"Playfair Display"', 'serif'],

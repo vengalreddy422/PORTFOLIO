@@ -18,26 +18,28 @@ export default function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center w-full">
         <div>
-          <p className="section-eyebrow mb-4">Portfolio / Vallem Vengal Reddy</p>
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] text-mist-100">
-            Hello, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-py-lightblue to-py-yellow">Vengal Reddy</span>
+          <p className="text-py-yellow font-display text-xs sm:text-sm tracking-[0.25em] font-bold uppercase mb-4">
+            Portfolio / Vallem Vengal Reddy
+          </p>
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight uppercase">
+            <span className="text-py-yellow">VALLEM</span>{' '}
+            <span className="text-white">VENGAL</span><br />
+            <span className="text-py-lightblue">REDDY</span>
           </h1>
           <p className="mt-5 text-lg text-mist-300 max-w-md">
             {profile.title}. I build full-stack web apps end to end — and use data to make them smarter.
           </p>
 
           <div className="mt-8 flex items-center gap-4">
-            <a
-              href="#projects"
-              className="px-5 py-3 rounded-lg bg-py-blue hover:bg-py-lightblue transition-colors text-white font-medium text-sm shadow-glow"
-            >
-              View my work
+            <a href="#projects" className="hr-btn-primary">
+              <span className="hr-btn-primary-inner">
+                View my work
+              </span>
             </a>
-            <a
-              href="#contact"
-              className="px-5 py-3 rounded-lg border border-white/10 hover:border-py-yellow/60 hover:text-py-yellow transition-colors text-mist-100 font-medium text-sm"
-            >
-              Get in touch
+            <a href="#contact" className="hr-btn-secondary">
+              <span className="hr-btn-secondary-inner">
+                Get in touch
+              </span>
             </a>
           </div>
 

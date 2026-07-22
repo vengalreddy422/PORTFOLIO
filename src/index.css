@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink-900 text-mist-100 font-body antialiased;
+}
+
+::selection {
+  @apply bg-py-blue/40 text-white;
+}
+
+/* scroll-reveal helper: elements start hidden, JS toggles .in-view */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-eyebrow {
+  @apply font-mono text-xs tracking-[0.25em] uppercase text-py-yellow/90;
+}
+
+.card-surface {
+  @apply bg-ink-800/70 border border-white/5 backdrop-blur-sm;
+}
+
+/* Education "road" — dashed center line */
+.road-dashes {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    theme('colors.mist.100') 0px,
+    theme('colors.mist.100') 14px,
+    transparent 14px,
+    transparent 28px
+  );
+  opacity: 0.35;
+}
+
+/* toy vehicle that drives up and down the education road on a loop */
+.toy-vehicle {
+  animation: driveRoad 7s ease-in-out infinite alternate;
+}
+@keyframes driveRoad {
+  0% {
+    top: 2%;
+  }
+  100% {
+    top: 90%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toy-vehicle {
+    animation: none;
+    top: 6%;
+  }
+}
+
+/* skills proficiency bar — fills in once its card scrolls into view */
+.proficiency-bar {
+  width: 0%;
+  transition: width 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in-view .proficiency-bar {
+  width: var(--bar-width);
+}
+
+/* thin custom scrollbar for a more crafted feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+::-webkit-scrollbar-thumb {
+  background: #243247;
+  border-radius: 999px;
+}
